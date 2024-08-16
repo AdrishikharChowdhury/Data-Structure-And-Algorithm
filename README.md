@@ -55,6 +55,7 @@ This repository serves as a resource for learning and practicing data structures
 
 Implementations are available in the following languages:
 - C
+- Java
 
 ## How to Use
 
