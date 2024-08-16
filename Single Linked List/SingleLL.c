@@ -18,6 +18,7 @@ nd *delend(nd *);
 nd *delpos(nd *,int);
 nd *delvalue(nd *);
 void menu(nd *,int );
+int countNodes(nd *);
 int main()
 {
 	int i,c,ch,n;
@@ -229,7 +230,7 @@ nd *delend(nd *head)
 }
 void menu(nd *head,int n)
 {
-	int ch;
+	int ch,c;
 	printf("\nEnter your operation:\n1.Insert At Benginning\n2.Insert At End\n3.Insert At Given Position\n4.Insert After Given Value\n5.Delete the First Node\n6.Delete the Last Node\n7.Delete Any Position\n8.Delete Any Value\n9.Reverse the Linked List\n10.Count The No. Of Nodes\n11.Sort the Linked List\n12.Display The Linked List\n13.Exit\nYour Choice: ");
 	scanf("%d",&ch);
 	switch(ch)
@@ -270,6 +271,14 @@ void menu(nd *head,int n)
 			printf("The Link List has been reversed\n");
 			head=reverse(head);
 			break;
+		case 10:
+			c=countNodes(head);
+			printf("The no. of nodes in this Linked List is %d",c);
+			break;
+		case 11:
+			printf("The Linked List has been sorted\n");
+			sortList(head);
+			break;		
 		case 12:
 			printf("The linked List is:\n");
 			ShowList(head);
@@ -336,4 +345,14 @@ nd *delvalue(nd *head)
         return head;
     }
     return head;
+}
+int countNodes(nd *head)
+{
+	int c=0;
+	while(head!=NULL)
+	{
+		head=head->link;
+		c++;
+	}
+	return c;
 }
