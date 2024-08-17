@@ -331,19 +331,22 @@ nd *delvalue(nd *head)
         	head = head1->link;
         	printf("%d has been deleted",ch);
 		}
-    while(head1->link!=NULL && head1->link->data!=ch)
-    {
-        head1=head1->link;
-	}
-    if(head1->link!=NULL)
-        {
-        	head1->link=head1->link->link;
-        	printf("%d has been deleted",ch);
+    else
+	{
+		while(head1->link!=NULL && head1->link->data!=ch)
+	    {
+	        head1=head1->link;
 		}
-    else{
-        printf("The data can't be found in this Linked List\n");
-        return head;
-    }
+	    if(head1->link!=NULL)
+	        {
+	        	head1->link=head1->link->link;
+	        	printf("%d has been deleted",ch);
+			}
+	    else{
+	        printf("The data can't be found in this Linked List\n");
+	        return head;
+	    }
+	}
     return head;
 }
 int countNodes(nd *head)
