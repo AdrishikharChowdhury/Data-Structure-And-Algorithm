@@ -30,7 +30,7 @@ The program includes the following main functions:
 11. `sortList`: Sort the linked list in ascending order
 12. `ShowList`: Display the current state of the linked list
 13. `swapData`: Swap the data of consecutive two structure/node. Used for sorting
-14. `menu`: The menu which contains all the operations for this Link List in menu driven system and repeated it by using recursion
+14. `menu`: The menu which contains all the operations for this Linked List in menu driven system and repeated it by using recursion
 
 ## How to Use
 
