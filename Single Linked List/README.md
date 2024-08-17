@@ -17,20 +17,21 @@ This repository contains a C program that implements various operations on a sin
 
 The program includes the following main functions:
 
-1. `insertbeg`: Insert a node at the beginning of the list
-2. `insertend`: Insert a node at the end of the list
-3. `insertpos`: Insert a node at a specific position
-4. `insertval`: Insert a node after a given value
-5. `delbeg`: Delete the first node
-6. `delend`: Delete the last node
-7. `delpos`: Delete a node at a specific position
-8. `delvalue`: Delete a node with a specific value
-9. `reverse`: Reverse the entire linked list
-10. `countNodes`: Count the no. of nodes present in the Linked List
-11. `sortList`: Sort the linked list in ascending order
-12. `ShowList`: Display the current state of the linked list
-13. `swapData`: Swap the data of consecutive two structure/node. Used for sorting
-14. `menu`: The menu which contains all the operations for this Linked List in menu driven system and repeated it by using recursion
+1. `createList`: Creates a Linked List at the beginning to do all the operations.
+2. `insertbeg`: Insert a node at the beginning of the list
+3. `insertend`: Insert a node at the end of the list
+4. `insertpos`: Insert a node at a specific position
+5. `insertval`: Insert a node after a given value
+6. `delbeg`: Delete the first node
+7. `delend`: Delete the last node
+8. `delpos`: Delete a node at a specific position
+9. `delvalue`: Delete a node with a specific value
+10. `reverse`: Reverse the entire linked list
+11. `countNodes`: Count the no. of nodes present in the Linked List
+12. `sortList`: Sort the linked list in ascending order
+13. `ShowList`: Display the current state of the linked list
+14. `swapData`: Swap the data of consecutive two structure/node. Used for sorting
+15. `menu`: The menu which contains all the operations for this Linked List in menu driven system and repeated it by using recursion
 
 ## How to Use
 
