@@ -26,8 +26,11 @@ The program includes the following main functions:
 7. `delpos`: Delete a node at a specific position
 8. `delvalue`: Delete a node with a specific value
 9. `reverse`: Reverse the entire linked list
-10. `sortList`: Sort the linked list in ascending order
-11. `ShowList`: Display the current state of the linked list
+10. `countNodes`: Count the no. of nodes present in the Linked List
+11. `sortList`: Sort the linked list in ascending order
+12. `ShowList`: Display the current state of the linked list
+13. `swapData`: Swap the data of consecutive two structure/node. Used for sorting
+14. `menu`: The menu which contains all the operations for this Link List in menu driven system and repeated it by using recursion
 
 ## How to Use
 
