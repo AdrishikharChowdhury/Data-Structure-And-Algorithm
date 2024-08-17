@@ -136,12 +136,20 @@ nd* insertpos(nd *head,int n)
         free(node);
         return insertpos(head,n);
 	}
-	if (k == 1) 
+	else if (k == 1) 
 	{
         node->link = head;
         head = node;
     }
-	else 
+    else if(k==n+1)
+    {
+    	while(current->link!=NULL)
+	    {
+	    	current=current->link;
+		}
+		current->link=node;
+	}
+	else
 	{
         for (i = 1; i < k - 1 && current != NULL; i++) {
             current = current->link;
@@ -167,19 +175,24 @@ nd* insertval(nd *head)
 	scanf("%d",&node->data);
 	printf("Enter the value you want to insert after: ");
 	scanf("%d",&val);
-	while(head1!=NULL)
+	while(head1->link!=NULL && head->link->data!=val)
 	{
-		if(head1->data==val)
-		{
-			node->link=head->link;
-			head1->link=node;
-			i=1;
-			break;
-		}
-		head1=head1->link;
+    	head1=head1->link;
 	}
-	if(i==0)
+	if(head->link==NULL)
+	{
+		head1->link=node;
+	}
+	else
+	{
+		if(head1==NULL)
 		printf("There is no value in this Linked List");
+		else
+		{
+			node->link=head1->link;
+			head1->link=node;
+		}
+	}
 	return head;
 }
 nd* delbeg(nd *head)
