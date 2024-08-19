@@ -50,7 +50,7 @@ nd* insertbeg(nd *h, int *n)
     }
     printf("Enter the data to be inserted: ");
     scanf("%d", &node->data);
-    printf("%d has been inserted\n",node->link);
+    printf("%d has been inserted\n",node->data);
 	node->link = h;
 	h=node;
     (*n)++;
@@ -127,6 +127,7 @@ nd* insertend(nd* head, int *n)
     }
     printf("Enter the data you want to insert at the end: ");
     scanf("%d", &node->data);
+    printf("%d has been inserted\n",node->data);
     node->link = NULL;
     while (head1->link != NULL) 
 	{
@@ -161,6 +162,7 @@ nd* insertpos(nd *head, int *n)
     }
     if (k == 1) 
 	{
+		printf("%d has been inserted\n",node->data);
         node->link = head;
         head=node;
     } 
@@ -176,6 +178,7 @@ nd* insertpos(nd *head, int *n)
             free(node);
             return head;
         }
+        printf("%d has been inserted\n",node->data);
         node->link = current->link;
         current->link = node;
     }
@@ -372,7 +375,7 @@ void menu(nd *head, int *n)
                 break;
             case 8:
             	printf("====================================\n");
-            	printf("\tInsert At Any Value \t\n");
+            	printf("\tDelete Any Value \t\n");
             	printf("====================================\n");
                 head = delvalue(head, n);
                 break;
@@ -411,31 +414,30 @@ nd* insertval(nd *head, int *n) {
     int val;
     nd *current = head;
     nd *node = (nd *)malloc(sizeof(nd));
-    
-    if (node == NULL) {
+    if (node == NULL)
+	{
         printf("Memory allocation failed\n");
         return head;
     }
-    
     printf("Enter the data to be inserted: ");
     scanf("%d", &node->data);
-    
     printf("Enter the value after which to insert: ");
     scanf("%d", &val);
-    
-    while (current != NULL && current->data != val) {
+    while (current != NULL && current->data != val)
+	{
         current = current->link;
-        printf("%d has been inserted",val);
     }
-    
-    if (current == NULL) {
+    if (current == NULL) 
+	{
         printf("Value %d not found in the list.\n", val);
-        free(node);
-    } else {
+        return head;
+    } 
+	else 
+	{
+		printf("%d has been inserted",node->data);
         node->link = current->link;
         current->link = node;
         (*n)++;
-        printf("%d has been inserted",val);
     }
     return head;
 }
