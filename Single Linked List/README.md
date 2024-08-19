@@ -1,4 +1,4 @@
-# Linked List Operations in C
+# Single Linked List Operations in C
 
 This repository contains a C program that implements various operations on a singly linked list. The program offers a menu-driven interface for users to perform different actions on the linked list.
 
