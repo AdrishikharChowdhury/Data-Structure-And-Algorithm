@@ -1,9 +1,4 @@
-
-# Linked List Operations in C
-
-This repository contains a C program that implements various operations on a **Singly Linked List**. The program provides a menu-driven interface, allowing users to interact with the linked list by performing a variety of operations, such as insertion, deletion, reversal, and sorting.
-
-## What is a Singly Linked List?
+# Singly Linked List
 
 A **Singly Linked List** is a dynamic data structure where each node contains:
 - **Data**: The value stored in the node.
