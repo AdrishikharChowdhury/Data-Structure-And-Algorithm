@@ -1,6 +1,4 @@
-Here’s your **generalized README.md** for a **Singly Linked List** implementation:
 
-```markdown
 # Linked List Operations in C
 
 This repository contains a C program that implements various operations on a **Singly Linked List**. The program provides a menu-driven interface, allowing users to interact with the linked list by performing a variety of operations, such as insertion, deletion, reversal, and sorting.
