@@ -1,4 +1,4 @@
-# Circular Linked List Implementation in C
+# Circular Linked List Implementation
 
 A variation of linked list where the last node points back to the first node, creating a circle. This creates a list that can be traversed endlessly in a circular manner.
 
