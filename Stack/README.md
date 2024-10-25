@@ -1,5 +1,3 @@
-Here’s a sample `README.md` for implementing a **Stack** data structure:
-
 # Stack Data Structure
 
 A **Stack** is a linear data structure that follows the **Last In, First Out (LIFO)** principle. It means the last element added to the stack will be the first one to be removed. Stacks are widely used in algorithms and problem-solving, particularly for managing function calls, parsing, expression evaluation, and more.
