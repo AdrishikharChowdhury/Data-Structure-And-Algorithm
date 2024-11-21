@@ -17,8 +17,6 @@ int main()
     display(arr, n); 
     return 0;
 }
-
-// remove the comments to convert it to modified bubble sort
 int *selection_sort(int *a, int n)
 {
     int min,i, j, t;
