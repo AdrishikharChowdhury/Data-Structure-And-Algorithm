@@ -28,9 +28,12 @@ int *selection_sort(int *a, int n)
             if(a[j]<a[min])
                 min=j;
         }
-        t=a[i];
-        a[i]=a[min];
-        a[min]=t;
+        if(min!=i)
+        {
+            t=a[i];
+            a[i]=a[min];
+            a[min]=t;
+        }
     }
     return a;
 }
