@@ -1,14 +1,12 @@
-# Sorting and Searching
+# Sorting
 
 ## Overview
 
-Sorting and searching are fundamental operations in computer science, crucial for efficient data management and retrieval. Sorting arranges data in a particular order, while searching finds specific data within a dataset.
+Sorting refers to rearranging elements in a specific order, typically ascending or descending. It is a fundamental operation in computer science, used to optimize processes such as searching, data analysis, and visualization.
 
 ---
 
-## Sorting
-
-Sorting refers to rearranging elements in a specific order, typically ascending or descending.
+## Sorting Algorithms
 
 ### Common Sorting Algorithms
 
@@ -51,52 +49,13 @@ Sorting refers to rearranging elements in a specific order, typically ascending 
 
 ---
 
-## Searching
-
-Searching refers to locating a specific element in a dataset.
-
-### Common Searching Algorithms
-
-1. **Linear Search**:
-   - Checks each element until the desired value is found.
-   - **Time Complexity**: \(O(n)\)
-   - **Space Complexity**: \(O(1)\)
-
-2. **Binary Search**:
-   - Divides a sorted array into halves and searches in the relevant half.
-   - **Time Complexity**: \(O(\log n)\)
-   - **Space Complexity**: \(O(1)\)
-
-3. **Jump Search**:
-   - Jumps fixed steps ahead in a sorted array and then performs linear search in the smaller range.
-   - **Time Complexity**: \(O(\sqrt{n})\)
-   - **Space Complexity**: \(O(1)\)
-
-4. **Exponential Search**:
-   - Finds the range where the element could be and performs binary search in that range.
-   - **Time Complexity**: \(O(\log n)\)
-   - **Space Complexity**: \(O(1)\)
-
-5. **Interpolation Search**:
-   - Improves binary search by estimating the position using the value.
-   - **Time Complexity**:
-     - Best Case: \(O(\log \log n)\)
-     - Worst Case: \(O(n)\)
-   - **Space Complexity**: \(O(1)\)
-
----
-
 ## Use Cases
 
-### Sorting
+### Sorting Applications
 - **Data Analysis**: Arranging data for easier visualization and insights.
 - **Searching Optimization**: Many searching algorithms (e.g., Binary Search) require sorted data.
 - **Scheduling**: Organizing tasks or jobs by priority or deadline.
-
-### Searching
-- **Database Querying**: Quickly retrieving specific data from large datasets.
-- **Routing**: Finding optimal paths in graphs and networks.
-- **Information Retrieval**: Search engines use advanced searching techniques for relevant results.
+- **Database Management**: Sorting records for faster query execution.
 
 ---
 
@@ -109,8 +68,8 @@ Searching refers to locating a specific element in a dataset.
 | **Insertion Sort** | \(O(n)\)     | \(O(n^2)\)   | \(O(n^2)\)   | \(O(1)\)          |
 | **Merge Sort**     | \(O(n \log n)\)| \(O(n \log n)\)| \(O(n \log n)\)| \(O(n)\)        |
 | **Quick Sort**     | \(O(n \log n)\)| \(O(n \log n)\)| \(O(n^2)\)   | \(O(\log n)\)     |
-| **Binary Search**  | \(O(1)\)     | \(O(\log n)\)| \(O(\log n)\) | \(O(1)\)          |
-| **Linear Search**  | \(O(1)\)     | \(O(n)\)     | \(O(n)\)     | \(O(1)\)          |
+| **Heap Sort**      | \(O(n \log n)\)| \(O(n \log n)\)| \(O(n \log n)\)| \(O(1)\)        |
+| **Radix Sort**     | \(O(nk)\)    | \(O(nk)\)    | \(O(nk)\)    | \(O(n + k)\)      |
 
 ---
 
@@ -125,45 +84,45 @@ function bubbleSort(array):
                 swap(array[j], array[j + 1])
 ```
 
-### Binary Search
+### Merge Sort
 ```plaintext
-function binarySearch(array, target):
-    left = 0
-    right = length(array) - 1
-    while left <= right:
-        mid = (left + right) // 2
-        if array[mid] == target:
-            return mid
-        else if array[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
-    return -1
+function mergeSort(array):
+    if length(array) > 1:
+        mid = length(array) // 2
+        left = mergeSort(array[0:mid])
+        right = mergeSort(array[mid:])
+        return merge(left, right)
 ```
 
 ---
 
-## Advantages
+## Complexity Analysis
 
-- **Sorting**:
-  - Improves search efficiency.
-  - Useful for visualization and analysis.
-  
-- **Searching**:
-  - Fast and efficient data retrieval.
-  - Saves time in large datasets.
+### Sorting Algorithms by Efficiency
+| Algorithm         | Efficiency           |
+|--------------------|----------------------|
+| Bubble Sort        | Inefficient for large datasets due to \(O(n^2)\) complexity. |
+| Selection Sort     | Simple but not suitable for large datasets. |
+| Insertion Sort     | Efficient for small or nearly sorted datasets. |
+| Merge Sort         | Suitable for large datasets due to \(O(n \log n)\) complexity. |
+| Quick Sort         | Fast for most datasets but can degrade to \(O(n^2)\) in the worst case. |
+| Heap Sort          | Consistently efficient with \(O(n \log n)\) complexity. |
+| Radix Sort         | Best for datasets with small ranges or numeric data. |
 
 ---
 
-## Disadvantages
+## Advantages of Sorting
 
-- **Sorting**:
-  - Some algorithms are computationally expensive for large datasets.
-  - Requires additional memory in cases like Merge Sort.
-  
-- **Searching**:
-  - Performance depends on data structure and size.
-  - Some algorithms work only on sorted data.
+- **Efficiency**: Enables faster searching and other operations.
+- **Data Organization**: Makes data easier to interpret and use.
+- **Optimization**: Many algorithms and processes require sorted data.
+
+---
+
+## Disadvantages of Sorting
+
+- **Time-Consuming**: For large datasets, sorting can take significant time.
+- **Memory Usage**: Some algorithms (e.g., Merge Sort) require additional memory.
 
 ---
 

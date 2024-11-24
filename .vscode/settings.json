@@ -60,6 +60,7 @@
     "createarray",
     "displayq",
     "heapify",
+    "heapsize",
     "infi",
     "subarray",
     "subarrays"
