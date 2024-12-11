@@ -1,6 +1,3 @@
-Here’s a `README.md` file for your Double-Ended Queue (DEQueue) implementation in C:
-
-```markdown
 # Double-Ended Queue (DEQueue) Implementation in C
 
 This program demonstrates the implementation of a **Double-Ended Queue (DEQueue)** using an array in C. A DEQueue allows insertion and deletion of elements from both ends (front and rear).
