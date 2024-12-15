@@ -149,7 +149,6 @@ int deleteend(int *queue,int *front,int *rear,int size)
     }
     return data;
 }
-#include <stdio.h>
 
 void display(int *queue, int front, int rear, int size) 
 {
