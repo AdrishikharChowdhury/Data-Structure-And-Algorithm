@@ -46,15 +46,15 @@ entry *createntry(entry *head,int n)
 int findKey(int data)
 {
     int sum=0,rem;
-    data=abs(data);
-    if(data<10)
-        return data;
+    int data1=abs(data);
+    if(data1<10)
+        return data1;
     else{
-        while(data>0)
+        while(data1>0)
         {
-            rem=data%10;
+            rem=data1%10;
             sum+=rem;
-            data=data/10;
+            data1=data1/10;
         }
         return findKey(sum);
     }
@@ -76,7 +76,6 @@ entry **createtable(entry **table,entry *head)
         } 
 		else                   
 		{
-            temp = table[key];
             while (temp->next != NULL) 
 			{
                 temp = temp->next;
