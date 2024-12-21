@@ -22,10 +22,10 @@ int main()
 			case 2:
 				stack=pop(stack,&c,n);
 				break;
-			/*case 3:
+			case 3:
 				pk=peek(stack,&c,n);
 				break;
-			*/case 4:
+			case 4:
 				display(stack,&c,n);
 				break;
 			case 5:
