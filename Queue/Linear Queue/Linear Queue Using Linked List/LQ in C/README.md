@@ -1,149 +1,71 @@
-# Linear Queue using Linked List
+# **Linear Queue Implementation in C**
 
-## Overview
-A **Linear Queue** is a **FIFO (First In, First Out)** data structure where:
-- **Insertion (enqueue)** happens at the **rear**.
-- **Deletion (dequeue)** happens at the **front**.
-
-Using a **Linked List** for queue implementation ensures **dynamic memory allocation** and avoids the fixed size limitation of arrays.
-
-## Features
-- **Efficient operations:** `O(1)` complexity for enqueue & dequeue
-- **No fixed size:** Can dynamically grow and shrink
-- **Memory-efficient:** Uses only the required memory
-- **Supports multiple languages:** Can be implemented in **C, C++, Java, Python, etc.**
-
-## Operations
-| Operation | Description |
-|-----------|------------|
-| `enqueue(value)` | Adds an element to the rear of the queue |
-| `dequeue()` | Removes and returns the front element |
-| `peek()` | Returns the front element without removing it |
-| `isEmpty()` | Checks if the queue is empty |
-| `display()` | Prints all elements in the queue |
-
-## Implementation in Different Languages
-
-### **C++**
-```cpp
-class Queue {
-    struct Node {
-        int data;
-        Node* next;
-    };
-    Node *front, *rear;
-
-public:
-    Queue() { front = rear = NULL; }
-
-    void enqueue(int value) {
-        Node* temp = new Node{value, NULL};
-        if (!rear) front = rear = temp;
-        else { rear->next = temp; rear = temp; }
-    }
-
-    int dequeue() {
-        if (!front) return -1;
-        int data = front->data;
-        Node* temp = front;
-        front = front->next;
-        delete temp;
-        return data;
-    }
-};
-```
-
-### **Python**
-```python
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-class Queue:
-    def __init__(self):
-        self.front = self.rear = None
-
-    def enqueue(self, value):
-        new_node = Node(value)
-        if not self.rear:
-            self.front = self.rear = new_node
-        else:
-            self.rear.next = new_node
-            self.rear = new_node
-
-    def dequeue(self):
-        if not self.front:
-            return None
-        data = self.front.data
-        self.front = self.front.next
-        return data
-```
-
-### **Java**
-```java
-class Node {
-    int data;
-    Node next;
-    Node(int value) { this.data = value; this.next = null; }
-}
-
-class Queue {
-    Node front, rear;
-
-    void enqueue(int value) {
-        Node temp = new Node(value);
-        if (rear == null) front = rear = temp;
-        else { rear.next = temp; rear = temp; }
-    }
-
-    int dequeue() {
-        if (front == null) return -1;
-        int data = front.data;
-        front = front.next;
-        return data;
-    }
-}
-```
-
-## Complexity Analysis
-| Operation | Time Complexity |
-|-----------|----------------|
-| Enqueue   | **O(1)** |
-| Dequeue   | **O(1)** |
-| Peek      | **O(1)** |
-| Display   | **O(n)** |
-
-## Use Cases
-- **Task Scheduling**: Job queues in operating systems
-- **Print Queue**: Managing print jobs
-- **Call Center Systems**: Handling customer requests in order
-
-## How to Run
-1. **Compile (for C++/Java)** or Run the Python script
-2. **Perform operations** like enqueue, dequeue, peek
-3. **Observe output & memory behavior**
-
-## Example Output
-```
-Enqueued: 10
-Enqueued: 20
-Dequeued: 10
-Front Element: 20
-Queue Elements: 20 -> 30
-```
-
-## Author
-**Adrishikhar Chowdhury**  
-🚀 Happy Coding! 🚀
-```
+## **Overview**
+A **Linear Queue** is a **FIFO (First In, First Out)** data structure where elements are inserted at the **rear** and removed from the **front**. This implementation in **C** provides basic queue operations such as **enqueue (insertion), dequeue (deletion), display**, and **checking if the queue is full or empty**.
 
 ---
 
-### **Why this README?**
-✅ Covers **multiple languages**  
-✅ Explains **queue operations**  
-✅ Includes **code snippets**  
-✅ Highlights **real-world applications**  
+## **Features**
+- **Enqueue**: Inserts an element at the rear of the queue.
+- **Dequeue**: Removes an element from the front of the queue.
+- **Display**: Prints all elements in the queue.
+- **Front & Rear Tracking**: Keeps track of the first and last elements.
+- **Efficient Operations**: Runs in **O(1)** time complexity for enqueue and dequeue.
 
-This **generic README** can be used for **any language** supporting **linked list-based queues**! 🚀
+---
+
+## **How It Works**
+1. **Insertion (Enqueue)**  
+   - Check if the queue is **full** (i.e., rear reaches the maximum size).
+   - If not full, insert an element at the **rear** and increment the rear pointer.
+
+2. **Deletion (Dequeue)**  
+   - Check if the queue is **empty**.
+   - If not empty, remove the **front** element and move the front pointer forward.
+
+3. **Display**  
+   - Traverse the queue and print all elements from `front` to `rear`.
+
+---
+
+## **Example Operations**
+| Operation  | Input  | Output |
+|------------|--------|--------|
+| **Enqueue** | `10` | Queue: `[10]` |
+| **Enqueue** | `20` | Queue: `[10, 20]` |
+| **Dequeue** | - | Queue: `[20]` |
+| **Enqueue** | `30` | Queue: `[20, 30]` |
+| **Display** | - | Output: `20 30` |
+
+---
+
+## **Complexity Analysis**
+| Operation  | Time Complexity | Space Complexity |
+|------------|----------------|------------------|
+| Enqueue   | **O(1)** | **O(n)** |
+| Dequeue   | **O(1)** | **O(n)** |
+| Display   | **O(n)** | **O(1)** |
+
+---
+
+## **How to Run**
+1. **Compile the code** using GCC:
+   ```sh
+   gcc linear_queue.c -o queue
+   ```
+2. **Run the program**:
+   ```sh
+   ./queue
+   ```
+3. **Follow on-screen instructions** to perform queue operations.
+
+---
+
+## **Possible Enhancements**
+- Implement **Circular Queue** to improve space efficiency.
+- Use **Dynamic Memory Allocation** to allow flexible queue sizes.
+
+---
+
+## **License**
+This project is open-source and can be used for **educational purposes**.
